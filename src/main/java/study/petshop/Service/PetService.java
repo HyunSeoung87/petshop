@@ -21,6 +21,7 @@ public class PetService {
                     .pet_id(p.getPet_id())
                     .pet_old(p.getPet_old())
                     .pet_name(p.getPet_name())
+                    .member_id(p.getMember())
                     .build()).collect(Collectors.toList());
     }
 }
