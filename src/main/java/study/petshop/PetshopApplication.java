@@ -19,6 +19,19 @@ import java.util.Optional;
 @SpringBootApplication
 @Slf4j
 public class PetshopApplication {
+    // 기능 리스트
+    // 1. 보유한 모든 펫 조회
+    // 2. 치료실 들어가기, 나오기
+    // 3. 치료실 들어가고 나오면 처방전 자동 발급
+    // 4. 환자 이메일로 처방전 전송
+
+    // 해야할 일
+    // 1. treatment (치료실) 엔티티 생성
+    // 2. prescript (처방전) 엔티티 생성
+    // 3. 치료실 출입 API 작성
+    // 4. 처방전 발급 API 작성
+    // 5. SMTP를 이용한 처방전 전송 작성
+    // 6. CI/CD를 위한 Jenkins or Docker 작업 진행.. 만약 Jenkins 사용 불가 시, Github Actions 사용 고려
 
     public static void main(String[] args) {
         SpringApplication.run(PetshopApplication.class, args);
