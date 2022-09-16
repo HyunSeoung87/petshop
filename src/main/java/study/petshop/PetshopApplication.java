@@ -20,14 +20,14 @@ import java.util.Optional;
 @Slf4j
 public class PetshopApplication {
     // 기능 리스트
-    // 1. 보유한 모든 펫 조회
+    // 1. 보유한 모든 펫 조회 (ok)
     // 2. 치료실 들어가기, 나오기
     // 3. 치료실 들어가고 나오면 처방전 자동 발급
     // 4. 환자 이메일로 처방전 전송
 
     // 해야할 일
-    // 1. treatment (치료실) 엔티티 생성
-    // 2. prescript (처방전) 엔티티 생성
+    // 1. treatment (치료실) 엔티티 생성 (ok)
+    // 2. prescript (처방전) 엔티티 생성 (ok)
     // 3. 치료실 출입 API 작성
     // 4. 처방전 발급 API 작성
     // 5. SMTP를 이용한 처방전 전송 작성

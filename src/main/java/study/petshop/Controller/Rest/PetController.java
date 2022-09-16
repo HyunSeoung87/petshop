@@ -1,6 +1,7 @@
 package study.petshop.Controller.Rest;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import study.petshop.Entity.Pet;
@@ -16,6 +17,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/pets")
 @RequiredArgsConstructor
+@Slf4j
 public class PetController {
     private final PetService petService;
 
@@ -23,7 +25,7 @@ public class PetController {
     public ResponseEntity<CommonResponse<List<Optional>>> getAllPets() {
         List<PetDto> list = petService.getAllPets();
         if (list.isEmpty()) {
-            ErrorInfo errorInfo = new ErrorInfo("404","동물 조회 실패");
+            ErrorInfo errorInfo = new ErrorInfo("404","전체 조회 실패");
             CommonResponse<List<Optional>> error = CommonResponse.error(errorInfo);
             return ResponseEntity.ok(error);
         }
@@ -41,7 +43,7 @@ public class PetController {
     @GetMapping("/{id}")
     public ResponseEntity<CommonResponse<Optional>> getPet (@PathVariable Long id) {
         PetDto petDto = petService.getPet(id);
-        if (petDto == null){
+        if (petDto != null){
             CommonResponse<Optional> pet = CommonResponse.success(petDto,null);
             return ResponseEntity.ok(pet);
         }
