@@ -1,6 +1,7 @@
 package study.petshop.Service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import study.petshop.Entity.Pet;
 import study.petshop.Repository.PetRepository;
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor // 생성자 주입
+@Slf4j
 public class PetService {
 
     private final PetRepository petRepository;

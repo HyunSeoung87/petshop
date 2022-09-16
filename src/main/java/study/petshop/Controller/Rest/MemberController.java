@@ -7,7 +7,7 @@ import study.petshop.Entity.Member;
 import study.petshop.Repository.MemberRepository;
 
 @RestController
-@RequestMapping("api/members")
+@RequestMapping("/api/members")
 @RequiredArgsConstructor
 public class MemberController {
 
