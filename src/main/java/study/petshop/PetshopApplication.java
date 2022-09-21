@@ -31,7 +31,7 @@ public class PetshopApplication {
     // 3. 치료실 출입 API 작성
     // 4. 처방전 발급 API 작성
     // 5. SMTP를 이용한 처방전 전송 작성
-    // 6. CI/CD를 위한 Jenkins or Docker 작업 진행.. 만약 Jenkins 사용 불가 시, Github Actions 사용 고려
+    // 6. CI/CD를 위한 Jenkins or Docker 작업 진행.. 만약 Jenkins 사용 불가 시, Github Actions 사용 고려 (pass)
 
     public static void main(String[] args) {
         SpringApplication.run(PetshopApplication.class, args);
