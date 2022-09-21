@@ -13,8 +13,13 @@ public class Treatment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long roomNum;
 
+    //https://hyos-dev-log.tistory.com/10
+    // mappedBy 고려해야함...
     @OneToOne
     @JoinColumn(name = "pet_id")
     private Pet pet_id;
+
+
+    private boolean using = false;
 
 }

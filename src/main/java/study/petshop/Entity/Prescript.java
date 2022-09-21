@@ -1,9 +1,6 @@
 package study.petshop.Entity;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,7 +8,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Prescipt {
+public class Prescript {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,4 +22,8 @@ public class Prescipt {
     @JoinColumn(name = "pet_id")
     private Pet pet_id;
 
+    public Prescript(Treatment treatment_id, Pet pet_id) {
+        this.treatment_id = treatment_id;
+        this.pet_id = pet_id;
+    }
 }

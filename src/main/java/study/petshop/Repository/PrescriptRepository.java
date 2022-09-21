@@ -1,9 +1,10 @@
 package study.petshop.Repository;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import study.petshop.Entity.Treatment;
+import study.petshop.Entity.Prescript;
 
 @Repository
-public interface TreatmentRepository extends JpaRepository<Treatment,Long> {
+public interface PrescriptRepository extends JpaRepository<Prescript,Long> {
 }
