@@ -28,8 +28,9 @@ public class PetshopApplication {
     // 해야할 일
     // 1. treatment (치료실) 엔티티 생성 (ok)
     // 2. prescript (처방전) 엔티티 생성 (ok)
-    // 3. 치료실 출입 API 작성
-    // 4. 처방전 발급 API 작성
+    // 3. 치료실 출입 API 작성 (ok)
+    // 4. 처방전 발급 API 작성 (ok)
+    // 4-1. Room Entity를 추가하던지 아니면 처방전 발급 방식을 바꾸던지..
     // 5. SMTP를 이용한 처방전 전송 작성
     // 6. CI/CD를 위한 Jenkins or Docker 작업 진행.. 만약 Jenkins 사용 불가 시, Github Actions 사용 고려 (pass)
 

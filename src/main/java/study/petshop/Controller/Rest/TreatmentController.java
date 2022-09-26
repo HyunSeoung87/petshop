@@ -26,16 +26,23 @@ public class TreatmentController {
         return ResponseEntity.ok(id);
     }
 
-    @PostMapping("/{pet_id}")
+    @GetMapping("/{pet_id}")
+    public ResponseEntity<?> getTreatment(@PathVariable Long pet_id) {
+        TreatmentDTO treatment = treatmentService.getTreatment(pet_id);
+        CommonResponse<TreatmentDTO> treatmentDTOCommonResponse = CommonResponse.success(treatment,null);
+        return ResponseEntity.ok(treatmentDTOCommonResponse);
+    }
+
+    @PostMapping("/enter/{pet_id}")
     public ResponseEntity<?> enterTreatment(@PathVariable Long pet_id,@RequestBody TreatmentDTO treatmentDTO) {
         treatmentService.useTreatment(pet_id,treatmentDTO);
         CommonResponse<TreatmentDTO> result = CommonResponse.success(treatmentDTO,null);
         return ResponseEntity.ok(result);
     }
 
-    @PostMapping("/{pet_id}/{roomNum}")
-    public  ResponseEntity<?> outTreatment(@PathVariable Long pet_id, @PathVariable Long roomNum) {
-        ResponsePrescriptDTO responsePrescriptDTO = treatmentService.outTreatment(pet_id, roomNum);
+    @PostMapping("/out/{pet_id}/{treat_id}")
+    public  ResponseEntity<?> outTreatment(@PathVariable Long pet_id, @PathVariable Long treat_id) {
+        ResponsePrescriptDTO responsePrescriptDTO = treatmentService.outTreatment(pet_id, treat_id);
         CommonResponse<ResponsePrescriptDTO> result = CommonResponse.success(responsePrescriptDTO,null);
         return ResponseEntity.ok(result);
     }

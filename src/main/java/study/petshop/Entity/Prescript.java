@@ -14,16 +14,15 @@ public class Prescript {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "treatment_id")
-    private Treatment treatment_id;
+    @OneToOne(mappedBy = "prescript_id", fetch = FetchType.LAZY)
+    private Treatment treat_id;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pet_id")
     private Pet pet_id;
 
     public Prescript(Treatment treatment_id, Pet pet_id) {
-        this.treatment_id = treatment_id;
+        this.treat_id = treatment_id;
         this.pet_id = pet_id;
     }
 }

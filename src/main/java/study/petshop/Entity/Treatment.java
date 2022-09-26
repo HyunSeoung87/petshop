@@ -11,15 +11,15 @@ import javax.persistence.*;
 public class Treatment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long roomNum;
+    private Long treat_id;
 
-    //https://hyos-dev-log.tistory.com/10
-    // mappedBy 고려해야함...
-    @OneToOne
-    @JoinColumn(name = "pet_id")
+    @ManyToOne(fetch = FetchType.LAZY)
     private Pet pet_id;
 
+    private boolean using = false; // 치료 유무
 
-    private boolean using = false;
+    @OneToOne
+    @JoinColumn(name = "id")
+    private Prescript prescript_id;
 
 }
