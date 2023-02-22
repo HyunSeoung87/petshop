@@ -20,6 +20,6 @@ public class memberTest {
 
     @Test
     void test() {
-
+        // test 성공!
     }
 }
